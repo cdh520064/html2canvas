@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+
+#printdiv{ width:100%; position:relative; }
+#printimg{ position:absolute; top:0; left:0; right:0; bottom:0; }
+.printmain{ position:absolute; top:0; left:0; right:0; bottom:0; padding-top:20rem; }
+.print_logo{ width:10.2%; margin:0 auto; }
+.print_title{ width:56.86%; margin:3.4375rem auto 0; position:relative; }
+.print_title div{ position:absolute; top:0; left:0; width:100%; height:100%; font-size:3.4375rem; line-height:7rem; text-align:center; color:#ffffff; letter-spacing:1.125rem; }
+.print_title_2{ font-size:7.25rem; font-weight:bold; color:#1f3d66; text-align:center; line-height:10.375rem; margin-top:1.5625rem; }
+.print_time_box{ width:67.65%; margin:4.6875rem auto 0; font-size:3.125rem; line-height:6.5rem; color:#4c4948; }
+.print_time_box span{ border-bottom:0.3125rem solid #838383; }
+.clock_icon{ float:left; width:3.5rem; margin-top:1.5rem; margin-right:1rem; }
+.urllink{ width:15%; margin:9.375rem auto 0;}
+.urllink .urllink_ewm{ width:81%; }
+.urllink div{ margin-top:1rem; font-size:2.34375rem; color:#030000; letter-spacing:3.125rem; }
+.print_num{ width:67.65%; margin:4.375rem auto 0; font-size:5.1875rem; line-height:6.5rem; color:#4c4948; }
+.print_num span{ border-bottom:0.3125rem solid #4c4948; }
+.print_info{ width:67.65%; margin:0 auto 0; }
+.print_item{ font-size:4.125rem; line-height:6.5rem; color:#4c4948; font-weight:bold; }
+.print_cont{ font-size:3.625rem; line-height:6.5rem; color:#1f3d66; }
+.print_cont span{ border-bottom:0.3125rem solid #1f3d66; }
+.print_tip{ width:67.65%; margin:1.4375rem auto 0; padding-top:3.6875rem; border-top:1px solid #a19a95; }
+.print_tip_title{ font-size:2.625rem; line-height:4.6875rem; color:#4c4948; font-weight:bold; }
+.print_tip_cont{ font-size:2.34375rem; line-height:3.90625rem; color:#4c4948; }
+.print_bottom_logo{ position:absolute; bottom:14.8125rem; left:50%; width:8.235%; margin-left:-4.1175%; }
+.print_btn{width: 78px;height: 28px; margin:0 auto; line-height: 28px;border: 0; font-size: 14px;cursor: pointer; background: #3d566d; border: 1px solid #3d566d; color: #fff;}
+.print_btn a{ display:block; height:100%; text-align:center; color:#fff; text-decoration:none; }
+.print_btn:hover { background: #4f6880; }

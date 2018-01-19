@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>打印证书</title>
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/qrcode.js"></script>
+<script type="text/javascript" src="js/html2canvas.js"></script>
+<OBJECT classid="CLSID:8856F961-340A-11D0-A96B-00C04FD705A2" height="0" id="WebBrowser3" width="0" VIEWASTEXT></OBJECT>
+<script>
+	var winW = $(window).width();
+	var font = winW*0.00627;
+	$('html').css('font-size',font+'px');
+	$(window).resize(function(){
+		var winW = $(window).width();
+		var font = winW*0.00627;
+		$('html').css('font-size',font+'px');
+	})
+</script>
+</head>
+
+<body>
+	<div id="printdiv">
+    	<div class="printbg"><img src="images/printbg.jpg" width="100%" /></div>
+        <div class="printmain">
+        	<div class="print_logo"><img src="images/print_logo.jpg" width="100%"/></div>
+            <div class="print_title">
+            	<img src="images/print_title_bg.png" width="100%" />
+                <div>创作证据 · 司法备案</div>
+            </div>
+            <div class="print_title_2">区块链版权预先登记证书</div>
+            <div class="print_time_box">
+            	<div class="">ETC区块链网络全球通用协调时间（UTC）<span class="year">2017</span> 年 <span class="month">10</span> 月 <span class="day">30</span> 日 <span class="hour">07:53</span></div>
+                <div class=""><img src="images/clock.png" class="clock_icon" />同步北京时间（东八区）：<span class="year">2017</span> 年 <span class="month">10</span> 月 <span class="day">30</span> 日 <span class="hour">15:53</span></div>
+                <div class="">证书有效期至 <span class="year">2017</span> 年 <span class="month">10</span> 月 <span class="day">30</span> 日 <span class="hour">15:53</span></div>
+            </div>
+            <div class="urllink">
+            	<input type="hidden" id="urltext" value="http://www.baidu.com/">
+            	<div class="urllink_ewm" id="qrcode"></div>
+                <div>证书查询</div>
+            </div>
+            <div class="print_num">CGICP区块链证据ID：<span>T15345646</span></div>
+            <div class="print_info">
+            	<div class="print_item">版权声明</div>
+                <div class="print_cont">
+                	作者 <span class="atname">CDH</span>  的作品<span class="workname">XXX</span> 于 <span class="year">2017</span> 年 <span class="month">10</span> 月 <span class="day">30</span> 日 <span class="hour">15:53</span> 分<br /> 
+                    完成区块链版权登记，数据同步至深圳市仲裁委员会司法固证中心
+                    已确权并生成司法证据，具备法律效力，全国司法认可。
+                </div>
+            </div>
+            <div class="print_tip">
+            	<div class="print_tip_title">使用提示</div>
+                <div class="print_tip_cont">
+                	<div>1.扫二维码，输入区块链证据ID号可对证书进行查询。</div>
+                	<div>2.本证书在司法确权时出示，作为有效司法证据使用。</div>
+                	<div>3.本证书备案时间之后若出现高度相似的作品版权，持证者有权对其提出撤销或申请其无效。</div>
+                	<div>4.提交本证书可升级为著作版权，保护期终身。</div>
+                </div>
+            </div>
+            <div class="print_bottom_logo"><img src="images/print_bottom_logo.png" width="100%" /></div>
+        </div>
+        <div id="printimg"></div>
+    </div>
+    <div class="print_btn"><a href="javascript:DoSomeThing();">打印</a></div>
+</body>
+</html>
+<script type="text/javascript">
+var qrcodewidth = $('#qrcode').width();
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	width : qrcodewidth,
+	height : qrcodewidth
+});
+function makeCode () {		
+	var elText = document.getElementById("urltext");
+	qrcode.makeCode(elText.value);
+}
+makeCode();
+</script>
+<script>
+	$(function(){
+		html2canvas(document.querySelector("#printdiv")).then(canvas => {
+			var dataUrl = canvas.toDataURL();  
+			var newImg = document.createElement("img");  
+			newImg.src =  dataUrl;
+			newImg.style.width = '100%';  
+			document.getElementById("printimg").appendChild(newImg);
+		});		
+	})
+</script>
+<script>
+	function DoSomeThing(){	
+		var newstr = document.getElementById("printimg").innerHTML; 
+		var oldstr = document.body.innerHTML; 
+		document.body.innerHTML = newstr; 
+		window.print();  
+		document.body.innerHTML = oldstr; 
+	}
+</script>
